@@ -1,7 +1,7 @@
 const config = require('./src/config');
 
 module.exports = {
-  siteMetadata: {
+    siteMetadata: {
     title: 'Light Amor',
     description:
       'Light Amor is a full-stack software engineer specializing in building remarkable software and digital tech.',

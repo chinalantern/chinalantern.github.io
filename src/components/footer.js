@@ -85,7 +85,8 @@ const Footer = () => {
 
       <StyledCredit tabindex="-1">
         
-          <div>Designed &amp; Built by Light Amor</div>
+          <div>Built by Light Amor</div>
+          <div>Credit: <a href="https://brittanychiang.com">Brittany Chiang</a> </div>
        
       </StyledCredit>
     </StyledFooter>
