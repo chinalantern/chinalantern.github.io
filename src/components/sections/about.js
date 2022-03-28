@@ -126,7 +126,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'Node.js', 'Next.js', 'React', 'Solidity', 'Web3.js', 'Ethers.js', 'Hardhat', 'Truffle'];
+  const skills = ['JavaScript', 'TypeScript', 'Node.js', 'Next.js', 'React', 'Solidity', 'Ethereum', 'Ethers.js', 'Hardhat', 'Redux'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -136,35 +136,26 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hiya! My name is Light (they / them). I’m a passionate technology futurist, software architect, and full-stack
-              web developer who loves to push the limits of technology and deliver novel,
-              memorable experiences at the intersection of human + computer.
+              Hiya! My name is Light (they / them). I’m a passionate technology futurist, software architect,
+              and software engineer who loves to push the limits of technology and deliver memorable 
+              experiences at the intersection of "Human + Computer."
             </p>
             
            
 
             <p>
-              I’ve had the privileged working with{' '}
+              I have had the privilege of working with start-ups, film/tv production studios, Fortune 150 companies,
+              the U.S. Department of State, and one of the top MBA programs in the United States, in the name of developing
+              stellar products, services, and solutions.
+            </p>
+              {/*I’ve had the privileged working with{' '}
               <a href="https://www.darkmattercoffee.com/">start-ups</a>,{' '}
               <a href="http://chicago.filmworkers.com/">film/tv production studios</a>,{' '}
               <a href="https://www.siemens.com/global/en.html">Fortune 500 companies</a>,
               the {' '}
               <a href="https://www.worldchicago.org/our-work/professional-exchanges/international-visitor-leadership-program">U.S. Department of State</a>, and one of the{' '}
               <a href="https://www.kellogg.northwestern.edu/">top four MBA programs</a> in the United States,
-              to develop products, services, and solutions.
-             
-              {/* Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients. */}
-            </p>
-
-            <p>
-              I hold a Master’s Degree in Business and Technology Innovation from the University of Maryland.
+              to develop products, services, and solutions.}
             </p>
 
             {/* <p>
