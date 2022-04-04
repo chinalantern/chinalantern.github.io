@@ -1,16 +1,17 @@
 ---
 date: '3'
-title: 'Build a Spotify Connected App'
+title: 'Smash Factory'
 cover: './course-card.png'
-external: 'https://www.newline.co/courses/build-a-spotify-connected-app'
-cta: 'https://www.newline.co/courses/build-a-spotify-connected-app'
+github: 'https://github.com/chinalantern/smash-factory'
+cta: https://smash-factory.netlify.app/
 tech:
-  - React
-  - Express
-  - Spotify API
-  - Styled Components
+  - ReactJS
+  - Firebase
+  - ChatAPI
+  - OAuth
+  - Heroku
 ---
 
-Having struggled with understanding how the Spotify OAuth flow works, I made the course I wish I could have had.
+Having been frustrated with the user experence + interface (UI/UX) and esoteric implementations of current Web3 Decentralized Autonomous Organizations (DAOs), I've decided to build a full-stack social-good DOA. My goal is to abstract away the jargon, technology, and cryptic experiences and deliver a fluid, accessible, community-based experience in exchange.
 
-Unlike tutorials that only cover a few concepts and leave you with half-baked GitHub repositories, this course covers everything from explaining the principles of REST APIs to implementing Spotify's OAuth flow and fetching API data in a React app. By the end of the course, you’ll have an app deployed to the internet you can add to your portfolio.
+Smash Factory is a proof-of-concept for the DAO's media engine micro-service.
