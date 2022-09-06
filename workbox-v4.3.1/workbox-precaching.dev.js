@@ -1,5 +1,14 @@
 this.workbox = this.workbox || {};
-this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFriendlyURL_mjs, logger_mjs, cacheWrapper_mjs, fetchWrapper_mjs, WorkboxError_mjs) {
+this.workbox.precaching = (function (
+  exports,
+  assert_mjs,
+  cacheNames_mjs,
+  getFriendlyURL_mjs,
+  logger_mjs,
+  cacheWrapper_mjs,
+  fetchWrapper_mjs,
+  WorkboxError_mjs,
+) {
   'use strict';
 
   try {
@@ -29,8 +38,7 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
      */
     add(newPlugins) {
       plugins.push(...newPlugins);
-    }
-
+    },
   };
 
   /*
@@ -71,13 +79,14 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
     const clonedResponse = response.clone(); // Not all browsers support the Response.body stream, so fall back
     // to reading the entire body into memory as a blob.
 
-    const bodyPromise = 'body' in clonedResponse ? Promise.resolve(clonedResponse.body) : clonedResponse.blob();
+    const bodyPromise =
+      'body' in clonedResponse ? Promise.resolve(clonedResponse.body) : clonedResponse.blob();
     const body = await bodyPromise; // new Response() is happy when passed either a stream or a Blob.
 
     return new Response(body, {
       headers: clonedResponse.headers,
       status: clonedResponse.status,
-      statusText: clonedResponse.statusText
+      statusText: clonedResponse.statusText,
     });
   }
 
@@ -103,49 +112,43 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
   function createCacheKey(entry) {
     if (!entry) {
       throw new WorkboxError_mjs.WorkboxError('add-to-cache-list-unexpected-type', {
-        entry
+        entry,
       });
     } // If a precache manifest entry is a string, it's assumed to be a versioned
     // URL, like '/app.abcd1234.js'. Return as-is.
-
 
     if (typeof entry === 'string') {
       const urlObject = new URL(entry, location);
       return {
         cacheKey: urlObject.href,
-        url: urlObject.href
+        url: urlObject.href,
       };
     }
 
-    const {
-      revision,
-      url
-    } = entry;
+    const { revision, url } = entry;
 
     if (!url) {
       throw new WorkboxError_mjs.WorkboxError('add-to-cache-list-unexpected-type', {
-        entry
+        entry,
       });
     } // If there's just a URL and no revision, then it's also assumed to be a
     // versioned URL.
-
 
     if (!revision) {
       const urlObject = new URL(url, location);
       return {
         cacheKey: urlObject.href,
-        url: urlObject.href
+        url: urlObject.href,
       };
     } // Otherwise, construct a properly versioned URL using the custom Workbox
     // search parameter along with the revision info.
-
 
     const originalURL = new URL(url, location);
     const cacheKeyURL = new URL(url, location);
     cacheKeyURL.searchParams.set(REVISION_SEARCH_PARAM, revision);
     return {
       cacheKey: cacheKeyURL.href,
-      url: originalURL.href
+      url: originalURL.href,
     };
   }
 
@@ -173,12 +176,15 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
    * @memberof module:workbox-precaching
    */
 
-
   function printCleanupDetails(deletedURLs) {
     const deletionCount = deletedURLs.length;
 
     if (deletionCount > 0) {
-      logger_mjs.logger.groupCollapsed(`During precaching cleanup, ` + `${deletionCount} cached ` + `request${deletionCount === 1 ? ' was' : 's were'} deleted.`);
+      logger_mjs.logger.groupCollapsed(
+        `During precaching cleanup, ` +
+          `${deletionCount} cached ` +
+          `request${deletionCount === 1 ? ' was' : 's were'} deleted.`,
+      );
       logGroup('Deleted Cache Requests', deletedURLs);
       logger_mjs.logger.groupEnd();
     }
@@ -219,7 +225,6 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
    * @memberof module:workbox-precaching
    */
 
-
   function printInstallDetails(urlsToPrecache, urlsAlreadyPrecached) {
     const precachedCount = urlsToPrecache.length;
     const alreadyPrecachedCount = urlsAlreadyPrecached.length;
@@ -228,7 +233,9 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
       let message = `Precaching ${precachedCount} file${precachedCount === 1 ? '' : 's'}.`;
 
       if (alreadyPrecachedCount > 0) {
-        message += ` ${alreadyPrecachedCount} ` + `file${alreadyPrecachedCount === 1 ? ' is' : 's are'} already cached.`;
+        message +=
+          ` ${alreadyPrecachedCount} ` +
+          `file${alreadyPrecachedCount === 1 ? ' is' : 's are'} already cached.`;
       }
 
       logger_mjs.logger.groupCollapsed(message);
@@ -274,27 +281,23 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
      * } entries Array of entries to precache.
      */
 
-
     addToCacheList(entries) {
       {
         assert_mjs.assert.isArray(entries, {
           moduleName: 'workbox-precaching',
           className: 'PrecacheController',
           funcName: 'addToCacheList',
-          paramName: 'entries'
+          paramName: 'entries',
         });
       }
 
       for (const entry of entries) {
-        const {
-          cacheKey,
-          url
-        } = createCacheKey(entry);
+        const { cacheKey, url } = createCacheKey(entry);
 
         if (this._urlsToCacheKeys.has(url) && this._urlsToCacheKeys.get(url) !== cacheKey) {
           throw new WorkboxError_mjs.WorkboxError('add-to-cache-list-conflicting-entries', {
             firstEntry: this._urlsToCacheKeys.get(url),
-            secondEntry: cacheKey
+            secondEntry: cacheKey,
           });
         }
 
@@ -312,18 +315,14 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
      * @return {Promise<workbox.precaching.InstallResult>}
      */
 
-
-    async install({
-      event,
-      plugins
-    } = {}) {
+    async install({ event, plugins } = {}) {
       {
         if (plugins) {
           assert_mjs.assert.isArray(plugins, {
             moduleName: 'workbox-precaching',
             className: 'PrecacheController',
             funcName: 'install',
-            paramName: 'plugins'
+            paramName: 'plugins',
           });
         }
       }
@@ -346,7 +345,7 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
         return this._addURLToCache({
           event,
           plugins,
-          url
+          url,
         });
       });
       await Promise.all(precacheRequests);
@@ -357,7 +356,7 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
 
       return {
         updatedURLs: urlsToPrecache,
-        notUpdatedURLs: urlsAlreadyPrecached
+        notUpdatedURLs: urlsAlreadyPrecached,
       };
     }
     /**
@@ -366,7 +365,6 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
      *
      * @return {Promise<workbox.precaching.CleanupResult>}
      */
-
 
     async activate() {
       const cache = await caches.open(this._cacheName);
@@ -386,7 +384,7 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
       }
 
       return {
-        deletedURLs
+        deletedURLs,
       };
     }
     /**
@@ -406,19 +404,14 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
      * fetch and caching.
      */
 
-
-    async _addURLToCache({
-      url,
-      event,
-      plugins
-    }) {
+    async _addURLToCache({ url, event, plugins }) {
       const request = new Request(url, {
-        credentials: 'same-origin'
+        credentials: 'same-origin',
       });
       let response = await fetchWrapper_mjs.fetchWrapper.fetch({
         event,
         plugins,
-        request
+        request,
       }); // Allow developers to override the default logic about what is and isn't
       // valid by passing in a plugin implementing cacheWillUpdate(), e.g.
       // a workbox.cacheableResponse.Plugin instance.
@@ -431,20 +424,20 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
         }
       }
 
-      const isValidResponse = cacheWillUpdateCallback ? // Use a callback if provided. It returns a truthy value if valid.
-      cacheWillUpdateCallback({
-        event,
-        request,
-        response
-      }) : // Otherwise, default to considering any response status under 400 valid.
-      // This includes, by default, considering opaque responses valid.
-      response.status < 400; // Consider this a failure, leading to the `install` handler failing, if
+      const isValidResponse = cacheWillUpdateCallback // Use a callback if provided. It returns a truthy value if valid.
+        ? cacheWillUpdateCallback({
+            event,
+            request,
+            response,
+          }) // Otherwise, default to considering any response status under 400 valid.
+        : // This includes, by default, considering opaque responses valid.
+          response.status < 400; // Consider this a failure, leading to the `install` handler failing, if
       // we get back an invalid response.
 
       if (!isValidResponse) {
         throw new WorkboxError_mjs.WorkboxError('bad-precaching-response', {
           url,
-          status: response.status
+          status: response.status,
         });
       }
 
@@ -459,8 +452,8 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
         response,
         cacheName: this._cacheName,
         matchOptions: {
-          ignoreSearch: true
-        }
+          ignoreSearch: true,
+        },
       });
     }
     /**
@@ -469,7 +462,6 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
      *
      * @return {Map<string, string>} A URL to cache key mapping.
      */
-
 
     getURLsToCacheKeys() {
       return this._urlsToCacheKeys;
@@ -480,7 +472,6 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
      *
      * @return {Array<string>} The precached URLs.
      */
-
 
     getCachedURLs() {
       return [...this._urlsToCacheKeys.keys()];
@@ -495,12 +486,10 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
      * for the original URL, or undefined if that URL isn't precached.
      */
 
-
     getCacheKeyForURL(url) {
       const urlObject = new URL(url, location);
       return this._urlsToCacheKeys.get(urlObject.href);
     }
-
   }
 
   /*
@@ -574,16 +563,17 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
    * @memberof module:workbox-precaching
    */
 
-  function* generateURLVariations(url, {
-    ignoreURLParametersMatching,
-    directoryIndex,
-    cleanURLs,
-    urlManipulation
-  } = {}) {
+  function* generateURLVariations(
+    url,
+    { ignoreURLParametersMatching, directoryIndex, cleanURLs, urlManipulation } = {},
+  ) {
     const urlObject = new URL(url, location);
     urlObject.hash = '';
     yield urlObject.href;
-    const urlWithoutIgnoredParams = removeIgnoredSearchParams(urlObject, ignoreURLParametersMatching);
+    const urlWithoutIgnoredParams = removeIgnoredSearchParams(
+      urlObject,
+      ignoreURLParametersMatching,
+    );
     yield urlWithoutIgnoredParams.href;
 
     if (directoryIndex && urlWithoutIgnoredParams.pathname.endsWith('/')) {
@@ -600,7 +590,7 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
 
     if (urlManipulation) {
       const additionalURLs = urlManipulation({
-        url: urlObject
+        url: urlObject,
       });
 
       for (const urlToAttempt of additionalURLs) {
@@ -680,7 +670,7 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
     ignoreURLParametersMatching = [/^utm_/],
     directoryIndex = 'index.html',
     cleanURLs = true,
-    urlManipulation = null
+    urlManipulation = null,
   } = {}) => {
     const cacheName = cacheNames_mjs.cacheNames.getPrecacheName();
     addEventListener('fetch', event => {
@@ -688,38 +678,51 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
         cleanURLs,
         directoryIndex,
         ignoreURLParametersMatching,
-        urlManipulation
+        urlManipulation,
       });
 
       if (!precachedURL) {
         {
-          logger_mjs.logger.debug(`Precaching did not find a match for ` + getFriendlyURL_mjs.getFriendlyURL(event.request.url));
+          logger_mjs.logger.debug(
+            `Precaching did not find a match for ` +
+              getFriendlyURL_mjs.getFriendlyURL(event.request.url),
+          );
         }
 
         return;
       }
 
-      let responsePromise = caches.open(cacheName).then(cache => {
-        return cache.match(precachedURL);
-      }).then(cachedResponse => {
-        if (cachedResponse) {
-          return cachedResponse;
-        } // Fall back to the network if we don't have a cached response
-        // (perhaps due to manual cache cleanup).
+      let responsePromise = caches
+        .open(cacheName)
+        .then(cache => {
+          return cache.match(precachedURL);
+        })
+        .then(cachedResponse => {
+          if (cachedResponse) {
+            return cachedResponse;
+          } // Fall back to the network if we don't have a cached response
+          // (perhaps due to manual cache cleanup).
 
+          {
+            logger_mjs.logger.warn(
+              `The precached response for ` +
+                `${getFriendlyURL_mjs.getFriendlyURL(
+                  precachedURL,
+                )} in ${cacheName} was not found. ` +
+                `Falling back to the network instead.`,
+            );
+          }
 
-        {
-          logger_mjs.logger.warn(`The precached response for ` + `${getFriendlyURL_mjs.getFriendlyURL(precachedURL)} in ${cacheName} was not found. ` + `Falling back to the network instead.`);
-        }
-
-        return fetch(precachedURL);
-      });
+          return fetch(precachedURL);
+        });
 
       {
         responsePromise = responsePromise.then(response => {
           // Workbox is going to handle the route.
           // print the routing details to the console.
-          logger_mjs.logger.groupCollapsed(`Precaching is responding to: ` + getFriendlyURL_mjs.getFriendlyURL(event.request.url));
+          logger_mjs.logger.groupCollapsed(
+            `Precaching is responding to: ` + getFriendlyURL_mjs.getFriendlyURL(event.request.url),
+          );
           logger_mjs.logger.log(`Serving the precached url: ${precachedURL}`);
           logger_mjs.logger.groupCollapsed(`View request details here.`);
           logger_mjs.logger.log(event.request);
@@ -805,7 +808,11 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
   const deleteOutdatedCaches = async (currentPrecacheName, substringToFind = SUBSTRING_TO_FIND) => {
     const cacheNames = await caches.keys();
     const cacheNamesToDelete = cacheNames.filter(cacheName => {
-      return cacheName.includes(substringToFind) && cacheName.includes(self.registration.scope) && cacheName !== currentPrecacheName;
+      return (
+        cacheName.includes(substringToFind) &&
+        cacheName.includes(self.registration.scope) &&
+        cacheName !== currentPrecacheName
+      );
     });
     await Promise.all(cacheNamesToDelete.map(cacheName => caches.delete(cacheName)));
     return cacheNamesToDelete;
@@ -828,13 +835,18 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
   const cleanupOutdatedCaches = () => {
     addEventListener('activate', event => {
       const cacheName = cacheNames_mjs.cacheNames.getPrecacheName();
-      event.waitUntil(deleteOutdatedCaches(cacheName).then(cachesDeleted => {
-        {
-          if (cachesDeleted.length > 0) {
-            logger_mjs.logger.log(`The following out-of-date precaches were cleaned up ` + `automatically:`, cachesDeleted);
+      event.waitUntil(
+        deleteOutdatedCaches(cacheName).then(cachesDeleted => {
+          {
+            if (cachesDeleted.length > 0) {
+              logger_mjs.logger.log(
+                `The following out-of-date precaches were cleaned up ` + `automatically:`,
+                cachesDeleted,
+              );
+            }
           }
-        }
-      }));
+        }),
+      );
     });
   };
 
@@ -881,26 +893,34 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
   const installListener = event => {
     const precacheController = getOrCreatePrecacheController();
     const plugins = precachePlugins.get();
-    event.waitUntil(precacheController.install({
-      event,
-      plugins
-    }).catch(error => {
-      {
-        logger_mjs.logger.error(`Service worker installation failed. It will ` + `be retried automatically during the next navigation.`);
-      } // Re-throw the error to ensure installation fails.
+    event.waitUntil(
+      precacheController
+        .install({
+          event,
+          plugins,
+        })
+        .catch(error => {
+          {
+            logger_mjs.logger.error(
+              `Service worker installation failed. It will ` +
+                `be retried automatically during the next navigation.`,
+            );
+          } // Re-throw the error to ensure installation fails.
 
-
-      throw error;
-    }));
+          throw error;
+        }),
+    );
   };
 
   const activateListener = event => {
     const precacheController = getOrCreatePrecacheController();
     const plugins = precachePlugins.get();
-    event.waitUntil(precacheController.activate({
-      event,
-      plugins
-    }));
+    event.waitUntil(
+      precacheController.activate({
+        event,
+        plugins,
+      }),
+    );
   };
   /**
    * Adds items to the precache list, removing any duplicates and
@@ -921,7 +941,6 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
    *
    * @alias workbox.precaching.precache
    */
-
 
   const precache = entries => {
     const precacheController = getOrCreatePrecacheController();
@@ -984,6 +1003,14 @@ this.workbox.precaching = (function (exports, assert_mjs, cacheNames_mjs, getFri
   exports.PrecacheController = PrecacheController;
 
   return exports;
-
-}({}, workbox.core._private, workbox.core._private, workbox.core._private, workbox.core._private, workbox.core._private, workbox.core._private, workbox.core._private));
+})(
+  {},
+  workbox.core._private,
+  workbox.core._private,
+  workbox.core._private,
+  workbox.core._private,
+  workbox.core._private,
+  workbox.core._private,
+  workbox.core._private,
+);
 //# sourceMappingURL=workbox-precaching.dev.js.map

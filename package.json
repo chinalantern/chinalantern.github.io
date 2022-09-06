@@ -20,10 +20,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "prepare": "husky install",
-    
     "deploy": "gatsby build && gh-pages -d public -b main"
   },
-  
   "dependencies": {
     "animejs": "^3.1.0",
     "babel-plugin-styled-components": "^1.12.0",
@@ -57,15 +55,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",
-    
     "@babel/preset-react": "^7.13.13",
-   
     "@upstatement/prettier-config": "^1.0.0",
     "babel-preset-gatsby": "^1.4.0",
-   
     "gatsby-remark-code-titles": "^1.1.0",
     "husky": "^6.0.0",
-    
     "prettier": "^2.7.1"
   }
 }

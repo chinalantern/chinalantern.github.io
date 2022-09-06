@@ -1,1 +1,13 @@
-{"data":{"site":{"siteMetadata":{"defaultTitle":"Light Amor","defaultDescription":"Light Amor is a full-stack software engineer specializing in building remarkable software and digital tech.","siteUrl":"https://chinalantern.github.io","defaultImage":"/og.png","twitterUsername":""}}}}
+{
+  "data": {
+    "site": {
+      "siteMetadata": {
+        "defaultTitle": "Light Amor",
+        "defaultDescription": "Light Amor is a full-stack software engineer specializing in building remarkable software and digital tech.",
+        "siteUrl": "https://chinalantern.github.io",
+        "defaultImage": "/og.png",
+        "twitterUsername": ""
+      }
+    }
+  }
+}

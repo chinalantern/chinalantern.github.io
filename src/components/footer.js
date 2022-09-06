@@ -83,14 +83,13 @@ const Footer = () => {
       </StyledSocialLinks>
 
       <StyledCredit tabindex="-1">
-        
-          <div>Built by Light Amor</div>
-          <div>Credit: <a href="https://brittanychiang.com">Brittany Chiang</a> </div>
-       
+        <div>Built by Light Amor</div>
+        <div>
+          Credit: <a href="https://brittanychiang.com">Brittany Chiang</a>{' '}
+        </div>
       </StyledCredit>
     </StyledFooter>
   );
 };
-
 
 export default Footer;

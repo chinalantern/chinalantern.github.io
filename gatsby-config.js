@@ -1,7 +1,7 @@
 const config = require('./src/config');
 
 module.exports = {
-    siteMetadata: {
+  siteMetadata: {
     title: 'Light Amor',
     description:
       'Light Amor is a full-stack software engineer specializing in building remarkable software and digital tech.',
@@ -148,12 +148,12 @@ module.exports = {
           },
         ],
       },
-    // },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: 'UA-45666519-2',
-    //   },
+      // },
+      // {
+      //   resolve: `gatsby-plugin-google-analytics`,
+      //   options: {
+      //     trackingId: 'UA-45666519-2',
+      //   },
     },
   ],
 };
