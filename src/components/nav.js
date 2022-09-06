@@ -177,7 +177,7 @@ const Nav = ({ isHome }) => {
       Resume
     </a>
   );
-
+ 
   return (
     <StyledHeader scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
       <StyledNav>
