@@ -13,3 +13,5 @@ package-lock.json
 #misc 
 .env
 .env.local
+.editorconfig
+.gitignore
