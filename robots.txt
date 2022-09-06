@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://chinalantern.github.io/sitemap/sitemap-index.xml
-Host: https://chinalantern.github.io
