@@ -20,17 +20,10 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "prepare": "husky install",
-    "lint-staged": "lint-staged",
+    
     "deploy": "gatsby build && gh-pages -d public -b main"
   },
-  "lint-staged": {
-    "*.{js,css,json,md}": [
-      "prettier --write"
-    ],
-    "*.js": [
-      "eslint --fix"
-    ]
-  },
+  
   "dependencies": {
     "animejs": "^3.1.0",
     "babel-plugin-styled-components": "^1.12.0",
@@ -64,18 +57,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",
-    "@babel/eslint-parser": "^7.18.9",
+    
     "@babel/preset-react": "^7.13.13",
-    "@upstatement/eslint-config": "^1.0.1",
+   
     "@upstatement/prettier-config": "^1.0.0",
     "babel-preset-gatsby": "^1.4.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-react": "^7.31.7",
+   
     "gatsby-remark-code-titles": "^1.1.0",
     "husky": "^6.0.0",
-    "lint-staged": "^13.0.3",
+    
     "prettier": "^2.7.1"
   }
 }
