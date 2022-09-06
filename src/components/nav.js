@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import resume from '../../static/resume.pdf';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -173,9 +174,9 @@ const Nav = ({ isHome }) => {
   );
 
   const ResumeLink = (
-    <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+    <a className="resume-button" href={resume} target="_blank" rel="noopener noreferrer">
       Resume
-    </a>
+    </a> 
   );
 
   return (
