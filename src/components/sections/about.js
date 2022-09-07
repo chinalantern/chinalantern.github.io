@@ -126,7 +126,20 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript', 'TypeScript', 'Node.js', 'Next.js', 'React', 'Solidity', 'Ethereum', 'Ethers.js', 'Hardhat', 'Redux'];
+    const skills = [
+      'JavaScript',
+      'Web3',
+      'React',
+      'Solidity',
+      'Next.js',
+      'Eathers.js',
+      'Node.js',
+      'Ethereum',
+      'TypeScript',
+      'Hardhat',
+      'Redux',
+      'Three.js',
+    ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -136,37 +149,18 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hiya! My name is Light (they / them). I’m a passionate technology futurist, software architect,
-              and software engineer who loves to push the limits of technology and deliver memorable 
-              experiences at the intersection of "Human + Computer."
+              Hiya! My name is Light (they/them). I’m a passionate technology futurist, software
+              architect, and software engineer who loves to push the limits of technology and
+              deliver memorable experiences at the intersection of "Human + Computer."
             </p>
-            
-           
 
             <p>
-              I have had the privilege of working with start-ups, film/tv production studios, Fortune 150 companies,
-              the U.S. Department of State, and one of the top MBA programs in the United States, in the name of developing
-              stellar products, services, and solutions.
+              I have had the privilege of working with start-ups, film/tv production studios,
+              Fortune 150 companies, the U.S. Department of State, and one of the top MBA programs
+              in the United States, in the name of developing stellar products, services, and
+              solutions.
             </p>
-              {/*I’ve had the privileged working with{' '}
-              <a href="https://www.darkmattercoffee.com/">start-ups</a>,{' '}
-              <a href="http://chicago.filmworkers.com/">film/tv production studios</a>,{' '}
-              <a href="https://www.siemens.com/global/en.html">Fortune 500 companies</a>,
-              the {' '}
-              <a href="https://www.worldchicago.org/our-work/professional-exchanges/international-visitor-leadership-program">U.S. Department of State</a>, and one of the{' '}
-              <a href="https://www.kellogg.northwestern.edu/">top four MBA programs</a> in the United States,
-              to develop products, services, and solutions.}
-            </p>
-
-            {/* <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
-            </p> */}
-
+            
             <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
 

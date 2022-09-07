@@ -1,15 +1,16 @@
 ---
 date: '1'
-title: 'Prime Crypto'
-cover: './halcyon.png'
-github: 'https://github.com/chinalantern/prime'
-external: 'https://prime-crypto.netlify.app/'
+title: 'Today AI'
+cover: './today_ai.png'
+github: 'https://github.com/chinalantern/open-ai'
+external: 'https://today-ai.netlify.app/'
 tech:
+  - ThreeJS
   - ReactJS
+  - Blender 3D
   - Javascript
-  - Solidity
-  - EthersJS
-  - HardHat
+  - CSS
+  - Figma
 ---
 
-A Web3, Ethereum blockchain based crypto currency Dapp for sending coin and token payments to family, friends, digital wallets, dapps and other smart contracts. Fully integrated with the MetaMask api for quick account access.
+Squid Games fan?! Then you'll enjoy this 3D immersive landing page. Soon to be fully integrated with an AI chatbot. Stay tuned!

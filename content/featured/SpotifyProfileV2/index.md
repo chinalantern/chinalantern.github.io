@@ -1,17 +1,15 @@
 ---
 date: '3'
-title: 'Smash Factory'
-cover: './course-card.png'
-github: 'https://github.com/chinalantern/smash-factory'
-cta: https://smash-factory.netlify.app/
+title: 'Prime Crypto'
+cover: './prime_crypto.png'
+github: 'https://github.com/chinalantern/prime'
+cta: https://prime-crypto.netlify.app/
 tech:
   - ReactJS
-  - Firebase
-  - ChatAPI
-  - OAuth
-  - Heroku
+  - Javascript
+  - Solidity
+  - EthersJS
+  - HardHat
 ---
 
-Having been frustrated with the user experence + interface (UI/UX) and esoteric implementations of current Web3 Decentralized Autonomous Organizations (DAOs), I've decided to build a full-stack social-good DOA. My goal is to abstract away the jargon, technology, and cryptic experiences and deliver a fluid, accessible, community-based experience in exchange.
-
-Smash Factory is a proof-of-concept for the DAO's media engine micro-service.
+A Web3, Ethereum blockchain based crypto currency Dapp for sending coin and token payments to family, friends, digital wallets, dapps and other smart contracts. Fully integrated with the MetaMask api for quick account access.

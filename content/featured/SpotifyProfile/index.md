@@ -7,6 +7,7 @@ external: 'https://blockheads-web3.netlify.app/'
 tech:
   - ReactJS
   - Redux
+  - Redux-Toolkit
   - APIs
   - ChartJS
   - Axios
