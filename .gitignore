@@ -1,5 +1,7 @@
 # Project dependencies
 .cache
+.husky
+.nvmrc
 node_modules
 yarn-error.log
 package-lock.json
@@ -13,3 +15,5 @@ package-lock.json
 #misc 
 .env
 .env.local
+.eslintrc
+prettier.config.js
