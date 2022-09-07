@@ -67,8 +67,11 @@ const Hero = () => {
         I'm a full-stack web and blockchain developer who builds exclusive modern software and
         digital products. As an experienced developer, I'm used to building custom websites and apps
         from the ground up. My strength is flexibility: besides engineering both front and back-ends
-        of Apps, I enjoy the variety of experiences working with multiple programming languages. I
-        believe: As a painter has many types of brushes so should a programmer be skilled with
+        of Apps, I enjoy the variety of experiences working with multiple programming languages.
+      </p>
+
+      <p>
+        I believe: As a painter has many types of brushes so should a programmer be skilled with
         various programming languages: It takes many techniques to build impressively.
       </p>
     </>
