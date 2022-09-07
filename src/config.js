@@ -11,12 +11,12 @@ module.exports = {
       url: 'https://github.com/chinalantern',
     },
     // {
-    //   name: 'Instagram',
-    //   url: 'https://www.instagram.com/bchiang7',
+    //   name: 'Discord',
+    //   url: 'https://discordapp.com/users/Light#7807',
     // },
     // {
-    //   name: 'Twitter',
-    //   url: 'https://twitter.com/bchiang7',
+    //   name: 'Telegram',
+    //   url: 'https://t.me/LightAmor',
     // },
     {
       name: 'AngelList',

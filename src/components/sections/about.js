@@ -126,20 +126,20 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-    const skills = [
-      'JavaScript',
-      'Web3',
-      'React',
-      'Solidity',
-      'Next.js',
-      'Eathers.js',
-      'Node.js',
-      'Ethereum',
-      'TypeScript',
-      'Hardhat',
-      'Redux',
-      'Three.js',
-    ];
+  const skills = [
+    'JavaScript',
+    'Web3',
+    'React',
+    'Solidity',
+    'Next.js',
+    'Eathers.js',
+    'Node.js',
+    'Ethereum',
+    'TypeScript',
+    'Hardhat',
+    'Redux',
+    'Three.js',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -149,9 +149,9 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hiya! My name is Light (they/them). I’m a passionate technology futurist, software
+              Hiya! My name is Light (they/them). I\’m a passionate technology futurist, software
               architect, and software engineer who loves to push the limits of technology and
-              deliver memorable experiences at the intersection of "Human + Computer."
+              deliver memorable experiences at the intersection of \"Human + Computer.\"
             </p>
 
             <p>
@@ -160,8 +160,8 @@ const About = () => {
               in the United States, in the name of developing stellar products, services, and
               solutions.
             </p>
-            
-            <p>Here are a few technologies I’ve been working with recently:</p>
+
+            <p>Here are a few technologies I\’ve been working with recently:</p>
           </div>
 
           <ul className="skills-list">
