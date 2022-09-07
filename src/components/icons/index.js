@@ -1,3 +1,5 @@
+// svg assistance with: https://www.svgviewer.dev/
+
 export { default as IconAppStore } from './appstore';
 export { default as IconBookmark } from './bookmark';
 export { default as IconCodepen } from './codepen';
@@ -14,3 +16,5 @@ export { default as IconPlayStore } from './playstore';
 export { default as IconStar } from './star';
 export { default as IconTwitter } from './twitter';
 export { default as IconAngelList } from './angellist';
+export { default as IconDiscord } from './discord';
+export { default as IconTelegram } from './telegram';

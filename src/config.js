@@ -10,14 +10,14 @@ module.exports = {
       name: 'GitHub',
       url: 'https://github.com/chinalantern',
     },
-    // {
-    //   name: 'Discord',
-    //   url: 'https://discordapp.com/users/Light#7807',
-    // },
-    // {
-    //   name: 'Telegram',
-    //   url: 'https://t.me/LightAmor',
-    // },
+    {
+      name: 'Discord',
+      url: 'https://discordapp.com/users/Light#7807',
+    },
+    {
+      name: 'Telegram',
+      url: 'https://t.me/LightAmor',
+    },
     {
       name: 'AngelList',
       url: 'https://angel.co/u/light-amor-1',
