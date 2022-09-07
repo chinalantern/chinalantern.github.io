@@ -132,7 +132,7 @@ const About = () => {
     'React',
     'Solidity',
     'Next.js',
-    'Eathers.js',
+    'Ethers.js',
     'Node.js',
     'Ethereum',
     'TypeScript',
@@ -149,9 +149,9 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hiya! My name is Light (they/them). I\’m a passionate technology futurist, software
+              Hiya! My name is Light (they/them). I’m a passionate technology futurist, software
               architect, and software engineer who loves to push the limits of technology and
-              deliver memorable experiences at the intersection of \"Human + Computer.\"
+              deliver memorable experiences at the intersection of Human+Computer.
             </p>
 
             <p>
@@ -161,7 +161,7 @@ const About = () => {
               solutions.
             </p>
 
-            <p>Here are a few technologies I\’ve been working with recently:</p>
+            <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
 
           <ul className="skills-list">

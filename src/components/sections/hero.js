@@ -64,27 +64,17 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I am a full-stack web and blockchain developer who builds clients impressive,
-        modern software and digital products. As an experienced developer,
-        I am used to building custom websites and apps from scratch.
-        But I also can focus on front-end, back-end, or giving existing code a "facelift."
-        I geek out on astrophysics and learning new programming languages.
-        Programming languages are tools. It takes many tools to build impressively.
-        
-        {/* Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
-        </a>. */}
+        I'm a full-stack web and blockchain developer who builds exclusive modern software and
+        digital products. As an experienced developer, I'm used to building custom websites and apps
+        from the ground up. My strength is flexibility: besides engineering both front and back-ends
+        of Apps, I enjoy the variety of experiences working with multiple programming languages. I
+        believe: As a painter has many types of brushes so should a programmer be skilled with
+        various programming languages: It takes many techniques to build impressively.
       </p>
     </>
   );
   const five = (
-    <a
-      className="email-link"
-      href="mailto:LightAmor@pm.me"
-      target="_blank"
-      rel="noreferrer">
+    <a className="email-link" href="mailto:LightAmor@pm.me" target="_blank" rel="noreferrer">
       Get In Touch
     </a>
   );
