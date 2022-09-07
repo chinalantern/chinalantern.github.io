@@ -1,7 +1,7 @@
 ---
 date: '1'
 title: 'Today AI'
-cover: './today_ai.png'
+cover: 'today-ai.png'
 github: 'https://github.com/chinalantern/open-ai'
 external: 'https://today-ai.netlify.app/'
 tech:
